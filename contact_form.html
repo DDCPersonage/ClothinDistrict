@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+</html><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4L6NKH7WJ4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4L6NKH7WJ4');
+</script>
+<body>
+<form id="contact-form" style="
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased spacing */
+    padding: 50px; /* More padding for spacious feel */
+    background: linear-gradient(145deg, #f0e6d2 0%, #d4b88d 100%); /* Soft light brown to warm tan gradient */
+    border-radius: 25px; /* Softer, more pronounced rounded corners */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Softer shadow for a warm glow */
+    max-width: 700px; /* Slightly wider for a grander presence */
+    margin: 40px auto;
+    font-family: 'Playfair Display', Georgia, serif; /* A more artistic serif font */
+    color: #4a4a4a; /* Dark text color for contrast on light background */
+    border: 1px solid rgba(0,0,0,0.05); /* Subtle dark border */
+">
+    <h2 style="
+        text-align: center;
+        color: #8b4513; /* Rich saddle brown for the heading */
+        margin-bottom: 35px;
+        font-size: 2.8em; /* Larger, more impactful heading */
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(255,255,255,0.4); /* Subtle light text shadow */
+        border-bottom: 3px solid #a0522d; /* Sienna brown underline */
+        padding-bottom: 18px;
+    ">Reach Out to Us</h2>
+
+    <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    ">
+        <label for="name" style="
+            font-weight: 600;
+            color: #5a5a5a; /* Slightly darker label color */
+            font-size: 1.2em;
+            text-transform: uppercase; /* Uppercase for elegance */
+            letter-spacing: 0.8px;
+        ">Your Name:</label>
+        <input type="text" id="name" name="name" required style="
+            padding: 16px 20px;
+            border: 2px solid #cd853f; /* Warm peru brown border for inputs */
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 18px;
+            background-color: #ffffff; /* Clean white background for inputs */
+            color: #333333; /* Dark text input */
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); /* Subtle inner shadow */
+            transition: all 0.4s ease-in-out;
+        ">
+    </div>
+
+    <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    ">
+        <label for="email" style="
+            font-weight: 600;
+            color: #5a5a5a;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        ">Your Email:</label>
+        <input type="email" id="email" name="email" required style="
+            padding: 16px 20px;
+            border: 2px solid #cd853f;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 18px;
+            background-color: #ffffff;
+            color: #333333;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.4s ease-in-out;
+        ">
+    </div>
+
+    <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    ">
+        <label for="age" style="
+            font-weight: 600;
+            color: #5a5a5a;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        ">Your Age:</label>
+        <input type="number" id="age" name="age" min="1" max="120" style="
+            padding: 16px 20px;
+            border: 2px solid #cd853f;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 18px;
+            background-color: #ffffff;
+            color: #333333;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.4s ease-in-out;
+        ">
+    </div>
+
+    <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    ">
+        <label for="gender" style="
+            font-weight: 600;
+            color: #5a5a5a;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        ">Gender:</label>
+        <select id="gender" name="gender" style="
+            padding: 16px 20px;
+            border: 2px solid #cd853f;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 18px;
+            background-color: #ffffff;
+            color: #333333;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.4s ease-in-out;
+        ">
+            <option value="">Select...</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="non-binary">Non-binary</option>
+            <option value="prefer-not-to-say">Prefer not to say</option>
+        </select>
+    </div>
+
+    <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    ">
+        <label for="message" style="
+            font-weight: 600;
+            color: #5a5a5a;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        ">Your Message:</label>
+        <textarea id="message" name="message" rows="7" required style="
+            padding: 16px 20px;
+            border: 2px solid #cd853f;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 18px;
+            background-color: #ffffff;
+            color: #333333;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+            resize: vertical;
+            transition: all 0.4s ease-in-out;
+        "></textarea>
+    </div>
+
+    <button type="submit" style="
+        background: linear-gradient(90deg, #a0522d 0%, #8b4513 100%); /* Rich sienna to saddle brown gradient for button */
+        color: #ffffff; /* White text on dark brown for strong contrast */
+        padding: 18px 35px;
+        border: none;
+        border-radius: 15px; /* More rounded button */
+        cursor: pointer;
+        font-size: 1.3em; /* Larger button text */
+        font-weight: 800; /* Extra bold button text */
+        letter-spacing: 1px;
+        align-self: center;
+        box-shadow: 0 8px 20px rgba(160,82,45,0.4); /* Brown-tinted shadow */
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother, more engaging transition */
+        margin-top: 25px;
+        text-transform: uppercase;
+    ">Send Message</button>
+    <p id="form-message" style="display: none; color: green; margin-top: 15px; text-align: center; font-weight: bold;"></p>
+</form>
+<script src="./script2.js"></script>
+</body>
+</html>

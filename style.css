@@ -1,0 +1,891 @@
+/* Universal Box-Sizing for consistent layout */
+*, *::before, *::after {
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* General Body and HTML styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling on the body */
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin: 0;
+    color: #333;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    padding: 5px 0; /* Add padding for better hover area */
+}
+
+nav ul li a:hover {
+    color: #FF6B6B;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.cart-link span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.cart-link.active-cart {
+    color: #FF6B6B; /* Style for active cart link on cart page */
+}
+.cart-link.active-cart span {
+    color: #FF6B6B;
+}
+
+
+/* Hero Video Section */
+#hero-video {
+    position: relative;
+    height: 80vh; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden; /* Keep video contained */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures video covers the container */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+    z-index: -1;
+}
+
+#hero-video h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    z-index: 1; /* Ensure text is above overlay */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.cta-button {
+    background-color: #FF6B6B;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1;
+}
+
+.cta-button:hover {
+    background-color: #e65c5c;
+    transform: translateY(-3px);
+}
+
+/* Products Section */
+#products {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+#products h2, #about h2, #contact h2, #cart-page-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+    position: relative;
+    display: inline-block; /* For underline effect */
+}
+
+#products h2::after, #about h2::after, #contact h2::after, #cart-page-content h2::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 4px;
+    background-color: #FF6B6B;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 20px; /* Space for button */
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.product-item img {
+    width: 100%;
+    height: 250px; /* Fixed height for product images */
+    object-fit: cover; /* Crop images to fit */
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* For subtle zoom on hover */
+}
+
+.product-item:hover img {
+    transform: scale(1.03);
+}
+
+.product-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #444;
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+
+.product-item .price {
+    font-size: 1.2rem;
+    color: #FF6B6B;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.product-item .add-to-cart-button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.product-item .add-to-cart-button:hover {
+    background-color: #4cae4c;
+}
+
+/* About Section */
+#about {
+    background-color: #f0f0f0;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.about-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* Contact Section (Old Location - now in footer) */
+/* The main #contact section was removed from HTML as per user request to move form to footer.
+   These styles are largely for the form itself, now applied to .footer-contact-form. */
+#contact {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+#contact h2 {
+    margin-bottom: 40px;
+}
+
+#contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 500px; /* Constrain form width */
+    margin: 0 auto; /* Center the form */
+    border: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #FF6B6B;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 107, 107, 0.2);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-button {
+    background-color: #FF6B6B;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: auto; /* Allow button to size naturally */
+    display: inline-block; /* For centering or text-align parent */
+}
+
+.submit-button:hover {
+    background-color: #e65c5c;
+    transform: translateY(-2px);
+}
+
+/* Notification for Add to Cart */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+    font-size: 1rem;
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Cart Page Specific Styles */
+#cart-page-content {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.cart-item-display {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+    color: #444;
+}
+
+.cart-item-display:last-child {
+    border-bottom: none;
+}
+
+.cart-total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+}
+
+#cart-total-amount {
+    color: #FF6B6B;
+}
+
+.cart-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.clear-cart-button {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.clear-cart-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Reusing cta-button for checkout */
+.back-to-shop {
+    margin-top: 40px;
+}
+
+/* Footer Styles (Bacardi.com inspired) */
+footer {
+    background-color: #1A1A1A;
+    color: #E0E0E0;
+    padding: 50px 20px 20px;
+    margin-top: 60px;
+    border-radius: 0;
+    font-size: 0.95rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 220px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background-color: #FF6B6B;
+    left: 0;
+    bottom: 0;
+    border-radius: 1px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #E0E0E0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FF6B6B;
+}
+
+/* Contact Info Icons */
+.contact-info p i {
+    margin-right: 10px;
+    color: #FF6B6B;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #E0E0E0;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #FF6B6B;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #A0A0A0;
+    font-size: 0.85rem;
+}
+
+/* New: Styles for the form within the footer */
+.footer-contact-form {
+    background-color: #2a2a2a; /* Slightly lighter than footer background */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px; /* Space from contact info */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 350px; /* Constrain width for larger screens */
+    margin-left: auto; /* Center form if space allows */
+    margin-right: auto; /* Center form if space allows */
+    border: none;
+}
+
+.footer-contact-form .form-group label {
+    color: #fff; /* White labels for dark background */
+    font-size: 0.95rem; /* Slightly smaller font */
+    margin-bottom: 5px; /* Reduced margin */
+}
+
+.footer-contact-form .form-group input[type="text"],
+.footer-contact-form .form-group input[type="email"],
+.footer-contact-form .form-group textarea {
+    background-color: #3a3a3a; /* Darker input fields */
+    color: #fff;
+    border: 1px solid #555;
+    padding: 8px; /* Reduced padding */
+    font-size: 0.9rem; /* Smaller font */
+    width: 100%; /* Now works with box-sizing: border-box */
+}
+
+.footer-contact-form .form-group input[type="text"]:focus,
+.footer-contact-form .form-group input[type="email"]:focus,
+.footer-contact-form .form-group textarea:focus {
+    border-color: #FF6B6B;
+    box-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
+}
+
+.footer-contact-form .form-group textarea {
+    min-height: 80px; /* Smaller textarea */
+    /* rows: 4; - HTML attribute, not CSS */
+}
+
+.footer-contact-form .submit-button {
+    width: 100%; /* Full width for footer button */
+    font-size: 0.9rem;
+    padding: 10px 15px; /* Smaller padding */
+    margin-top: 15px; /* Adjusted margin */
+}
+
+/* Small button class (for the submit button in the footer) */
+.small-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* Message display within footer */
+#form-message {
+    color: #28a745 !important; /* Ensure visibility on dark background */
+    background-color: #f0f0f0; /* Light background for message */
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px !important;
+}
+
+/* --- Styles for new content pages (Privacy Policy, Terms of Service, Detailed About Us) --- */
+
+/* Body specific to sub-pages to prevent hero video display issues */
+body#sub-page {
+    background-color: #f8f8f8; /* Ensures consistent background */
+}
+
+/* Main content area for sub-pages */
+.content-page-main {
+    padding-top: 80px; /* Space from fixed header */
+    padding-bottom: 60px; /* Space before footer */
+}
+
+/* Section containing the actual text content */
+.content-section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    line-height: 1.8;
+    color: #444;
+}
+
+.content-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.content-section h2::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 4px;
+    background-color: #FF6B6B;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-radius: 2px;
+}
+
+.content-section h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    color: #555;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.content-section ul {
+    list-style: disc;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.content-section ul li {
+    margin-bottom: 8px;
+}
+
+.content-section a {
+    color: #FF6B6B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.content-section a:hover {
+    text-decoration: underline;
+    color: #e65c5c;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+    nav ul li {
+        margin-left: 15px;
+    }
+    nav ul li a {
+        font-size: 0.95rem;
+    }
+    #hero-video h2 {
+        font-size: 2.8rem;
+    }
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    #products h2, #about h2, #contact h2, #cart-page-content h2 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .product-item img {
+        height: 220px;
+    }
+    .product-item h3 {
+        font-size: 1.2rem;
+    }
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    header h1 {
+        margin-bottom: 10px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 5px 10px;
+    }
+    #hero-video {
+        height: 60vh;
+    }
+    #hero-video h2 {
+        font-size: 2rem;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    .product-item img {
+        height: 180px;
+    }
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-section {
+        min-width: unset;
+        width: 100%;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .contact-info p {
+        text-align: center;
+    }
+    /* Adjust footer form for smaller screens */
+    .footer-contact-form {
+        margin: 20px auto 0 auto; /* Center form */
+        max-width: 90%; /* Constrain width on small screens */
+    }
+    .footer-contact-form .form-group input,
+    .footer-contact-form .form-group textarea {
+        width: 100%; /* Now works with box-sizing: border-box */
+    }
+    .cart-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .cart-buttons button {
+        width: 80%; /* Make buttons wider on small screens */
+        margin: 0 auto;
+    }
+    /* Media Queries for content pages */
+    .content-page-main {
+        padding-top: 100px; /* Adjust for header possibly wrapping */
+    }
+    .content-section {
+        margin: 20px;
+        padding: 20px;
+    }
+    .content-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    .content-section h3 {
+        font-size: 1.4rem;
+        margin-top: 25px;
+    }
+    .content-section p, .content-section ul li {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    nav ul li {
+        margin: 5px 8px;
+    }
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+    #hero-video h2 {
+        font-size: 1.8rem;
+    }
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    #products h2, #about h2, #contact h2, #cart-page-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .product-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 15px;
+    }
+    .product-item {
+        max-width: 300px; /* Constrain single column items */
+        margin: 0 auto;
+    }
+    .product-item img {
+        height: 200px;
+    }
+    .about-content img {
+        width: 100%;
+    }
+    #contact-form {
+        padding: 20px;
+    }
+    .footer-contact-form {
+        padding: 15px;
+        max-width: 100%; /* Allow form to take full width of footer column */
+    }
+    .content-section {
+        padding: 15px;
+        margin: 15px;
+    }
+    .content-section h2 {
+        font-size: 1.8rem;
+    }
+    .content-section h3 {
+        font-size: 1.2rem;
+    }
+    .content-section ul {
+        margin-left: 20px;
+    }
+}

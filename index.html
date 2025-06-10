@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClothinDistrict - Your Style Destination</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <script src="script.js" defer></script>
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4L6NKH7WJ4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4L6NKH7WJ4');
+</script>
+<body>
+  <header>
+    <h1>ClothinDistrict</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#products">Shop Now</a></li>
+        <li><a href="our_story.html">Our Story</a></li>
+        <li><a href="#footer-contact-form">Connect</a></li>
+        <li><a href="cart.html" class="cart-link">
+          <img src="images/cart-icon.png" alt="Cart" class="cart-icon"/>
+          Your Cart (<span id="cart-count">0</span>)
+        </a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+            <section id="hero-video">
+            <h2>Discover Your Signature Style</h2>
+            <div class="video-container">
+                <video controls autoplay muted loop class="lazyload-video">
+                    <source data-src="video/hero-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+            </div>
+            <button class="cta-button" onclick="location.href='#products'">Explore Collection</button>
+        </section>
+           <section id="products">
+            <h2>Our Curated Collection</h2>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product1.jpg" alt="Elegant Linen Shirt" class="lazyload">
+                    <h3>Elegant Linen Shirt</h3>
+                    <p class="price">₹ 1499</p>
+                    <button class="add-to-cart-button" data-product-id="1" data-product-name="Elegant Linen Shirt" data-product-price="1499.00">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product2.jpg" alt="Classic Denim Jeans" class="lazyload">
+                    <h3>Classic Denim Jeans</h3>
+                    <p class="price">₹ 2299</p>
+                    <button class="add-to-cart-button" data-product-id="2" data-product-name="Classic Denim Jeans" data-product-price="2299.00">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product3.jpg" alt="Bohemian Maxi Dress" class="lazyload">
+                    <h3>Bohemian Maxi Dress</h3>
+                    <p class="price">₹ 2999</p>
+                    <button class="add-to-cart-button" data-product-id="3" data-product-name="Bohemian Maxi Dress" data-product-price="2999.00">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product4.jpg" alt="Cozy Knit Sweater" class="lazyload">
+                    <h3>Cozy Knit Sweater</h3>
+                    <p class="price">₹ 1850</p>
+                    <button class="add-to-cart-button" data-product-id="4" data-product-name="Cozy Knit Sweater" data-product-price="1850.00">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product5.jpg" alt="Stylish Sneakers" class="lazyload">
+                    <h3>Stylish Sneakers</h3>
+                    <p class="price">₹ 3450</p>
+                    <button class="add-to-cart-button" data-product-id="5" data-product-name="Stylish Sneakers" data-product-price="3450.00">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product6.jpg" alt="Elegant Handbag" class="lazyload">
+                    <h3>Elegant Handbag</h3>
+                    <p class="price">₹ 1999</p>
+                    <button class="add-to-cart-button" data-product-id="6" data-product-name="Elegant Handbag" data-product-price="1999.00">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product7.jpg" alt="Classic Aviator Sunglasses" class="lazyload">
+                    <h3>Classic Aviator Sunglasses</h3>
+                    <p class="price">₹ 950</p>
+                    <button class="add-to-cart-button" data-product-id="7" data-product-name="Classic Aviator Sunglasses" data-product-price="950.00">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product8.jpg" alt="Minimalist Watch" class="lazyload">
+                    <h3>Minimalist Watch</h3>
+                    <p class="price">₹ 4500</p>
+                    <button class="add-to-cart-button" data-product-id="8" data-product-name="Minimalist Watch" data-product-price="4500.00">Add to Cart</button>
+                </div>
+
+                <div class="product-item">
+                    <img src="images/placeholder.jpg" data-src="images/product9.jpg" alt="Sporty Track Jacket" class="lazyload">
+                    <h3>Sporty Track Jacket</h3>
+                    <p class="price">₹ 2100</p>
+                    <button class="add-to-cart-button" data-product-id="9" data-product-name="Sporty Track Jacket" data-product-price="2100.00">Add to Cart</button>
+                </div>
+
+            </div>
+        </section>
+  </main>
+
+  <div class="notification" id="add-to-cart-notification">
+    Item added to cart!
+  </div>
+
+  <footer id="footer-contact-form">
+    <div class="footer-content">
+      <div class="footer-section about-us-footer">
+        <h3>ClothinDistrict</h3>
+        <p>Curated style, timeless elegance. Discover your signature look with us.</p>
+      </div>
+      <div class="footer-section quick-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="our_story.html">Our Story</a></li>
+          <li><a href="index.html#products">Shop</a></li>
+          <li><a href="about-us-detailed.html">About Us</a></li>
+          <li><a href="contact_form.html">Contact Form</a></li>
+          <li><a href="cart.html">My Cart</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Lane, Coimbatore, India</p>
+        <p><i class="fas fa-envelope"></i> info@clothindistrict.com</p>
+        <p><i class="fas fa-phone-alt"></i> +91 96418 22679</p>
+
+
+      </div>
+      <div class="footer-section social-media">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ClothinDistrict. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
